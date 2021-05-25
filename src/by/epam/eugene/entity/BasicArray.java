@@ -5,28 +5,35 @@ import by.epam.eugene.exception.BasicArrayException;
 public class BasicArray {
     private int[] array;
 
-    public BasicArray() {
-
-    }
     public BasicArray(int[] array) {
         this.array  = array;
     }
-    public BasicArray(int size) throws BasicArrayException {
-        if (size < 1) {
+
+    public BasicArray(int sizeArray) throws BasicArrayException {
+        if (sizeArray < 1) {
             throw new BasicArrayException();
         }
-        this.array = new int[size];
+        this.array = new int[sizeArray];
     }
+
     public int getSize() {
         return array.length;
     }
+
     public int getElement(int index) throws BasicArrayException {
-        if (index < array.length) {
-            return array[index];
-        } else {
+        if (index > array.length) {
+           throw new BasicArrayException();
+        }
+        return this.array[index];
+    }
+
+    public void setElement(int index, int element) throws BasicArrayException {
+        if (index > array.length) {
             throw new BasicArrayException();
         }
+        this.array[index] = element;
     }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder("\nArray: " + array.length + " elements\n");
@@ -35,8 +42,9 @@ public class BasicArray {
         }
         return stringBuilder.toString();
     }
+
     public int[] getArray() throws BasicArrayException {
-        if (array.length < 0) {
+        if (array.length < 1) {
             throw new BasicArrayException("array is empty");
         }
         return this.array.clone();
