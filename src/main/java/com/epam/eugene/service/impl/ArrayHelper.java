@@ -1,8 +1,7 @@
-package main.java.com.epam.eugene.service.impl;
+package com.epam.eugene.service.impl;
 
-
-import main.java.com.epam.eugene.entity.BasicArray;
-import main.java.com.epam.eugene.exception.BasicArrayException;
+import com.epam.eugene.entity.BasicArray;
+import com.epam.eugene.exception.BasicArrayException;
 
 public interface ArrayHelper {
     int findMaxElement(BasicArray basicArray) throws BasicArrayException;

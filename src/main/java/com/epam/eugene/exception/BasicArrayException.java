@@ -1,4 +1,4 @@
-package main.java.com.epam.eugene.exception;
+package com.epam.eugene.exception;
 
 public class BasicArrayException extends Exception {
     public BasicArrayException() {

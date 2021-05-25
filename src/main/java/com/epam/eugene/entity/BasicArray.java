@@ -1,9 +1,12 @@
-package main.java.com.epam.eugene.entity;
+package com.epam.eugene.entity;
 
-
-import main.java.com.epam.eugene.exception.BasicArrayException;
+import com.epam.eugene.exception.BasicArrayException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BasicArray {
+
+    private static final Logger userLogger = LogManager.getLogger(BasicArray.class);
     private int[] array;
 
     public BasicArray(int[] array) {
@@ -41,6 +44,8 @@ public class BasicArray {
         for (int value : this.array) {
             stringBuilder.append(value).append(" ");
         }
+        userLogger.info("String is already!");
+        //rootLogger.info("String is already!");
         return stringBuilder.toString();
     }
 

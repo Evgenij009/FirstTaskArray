@@ -1,8 +1,7 @@
-package main.java.com.epam.eugene.service.sort.assortment;
+package com.epam.eugene.service.sort.assortment;
 
-
-import main.java.com.epam.eugene.entity.BasicArray;
-import main.java.com.epam.eugene.exception.BasicArrayException;
+import com.epam.eugene.entity.BasicArray;
+import com.epam.eugene.exception.BasicArrayException;
 
 public class InsertionSort {
 
@@ -11,7 +10,7 @@ public class InsertionSort {
 
     public static void sortArray(BasicArray basicArray) throws BasicArrayException {
         int sizeArray = basicArray.getSize();
-        for (var i = 0; i < sizeArray; ++i) {
+        for (int i = 0; i < sizeArray; ++i) {
             int temp = basicArray.getElement(i);
             int j = i;
             while (j > 0 && basicArray.getElement(j - 1) > temp) {

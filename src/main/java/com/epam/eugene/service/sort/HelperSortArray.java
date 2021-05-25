@@ -1,10 +1,10 @@
-package main.java.com.epam.eugene.service.sort;
+package com.epam.eugene.service.sort;
 
-import main.java.com.epam.eugene.entity.BasicArray;
-import main.java.com.epam.eugene.exception.BasicArrayException;
-import main.java.com.epam.eugene.service.impl.SortArray;
-import main.java.com.epam.eugene.service.sort.assortment.BubleSort;
-import main.java.com.epam.eugene.service.sort.assortment.InsertionSort;
+import com.epam.eugene.entity.BasicArray;
+import com.epam.eugene.exception.BasicArrayException;
+import com.epam.eugene.service.impl.SortArray;
+import com.epam.eugene.service.sort.assortment.BubleSort;
+import com.epam.eugene.service.sort.assortment.InsertionSort;
 
 public class HelperSortArray implements SortArray {
 

@@ -1,7 +1,6 @@
-package main.java.com.epam.eugene.service.impl;
+package com.epam.eugene.service.impl;
 
-
-import main.java.com.epam.eugene.entity.BasicArray;
+import com.epam.eugene.entity.BasicArray;
 
 public interface SortArray {
       void bubleSort(BasicArray basicArray);

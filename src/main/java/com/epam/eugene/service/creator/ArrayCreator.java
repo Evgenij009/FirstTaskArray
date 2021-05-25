@@ -1,7 +1,7 @@
-package main.java.com.epam.eugene.service.creator;
+package com.epam.eugene.service.creator;
 
-import main.java.com.epam.eugene.entity.BasicArray;
-import main.java.com.epam.eugene.exception.BasicArrayException;
+import com.epam.eugene.entity.BasicArray;
+import com.epam.eugene.exception.BasicArrayException;
 
 public class ArrayCreator {
 
@@ -10,7 +10,7 @@ public class ArrayCreator {
 
     public static void fillRandomized(BasicArray basicArray, int minValue, int maxValue) {
         int sizeArray = basicArray.getSize();
-        for (var i = 0; i < sizeArray; ++i) {
+        for (int i = 0; i < sizeArray; ++i) {
             int value = (int)((Math.random() * (maxValue - minValue)) + minValue);
             try {
                 basicArray.setElement(i, value);
