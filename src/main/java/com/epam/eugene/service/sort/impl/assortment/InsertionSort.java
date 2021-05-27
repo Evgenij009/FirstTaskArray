@@ -1,4 +1,4 @@
-package com.epam.eugene.service.sort.assortment;
+package com.epam.eugene.service.sort.impl.assortment;
 
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;

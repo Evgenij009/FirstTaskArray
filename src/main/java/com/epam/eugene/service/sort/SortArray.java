@@ -1,4 +1,4 @@
-package com.epam.eugene.service.impl;
+package com.epam.eugene.service.sort;
 
 import com.epam.eugene.entity.BasicArray;
 

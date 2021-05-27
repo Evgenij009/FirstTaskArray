@@ -1,4 +1,4 @@
-package com.epam.eugene.service.creator;
+package com.epam.eugene.creator;
 
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;
