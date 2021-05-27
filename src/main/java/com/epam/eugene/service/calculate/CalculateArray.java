@@ -1,9 +1,9 @@
-package com.epam.eugene.service.impl;
+package com.epam.eugene.service;
 
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;
 
-public interface ArrayHelper {
+public interface CalculateArray {
     int findMaxElement(BasicArray basicArray) throws BasicArrayException;
     int findMinElement(BasicArray basicArray) throws BasicArrayException;
     int findAverageElement(BasicArray basicArray) throws BasicArrayException;
