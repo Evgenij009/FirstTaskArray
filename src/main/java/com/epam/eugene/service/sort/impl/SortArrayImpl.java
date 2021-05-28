@@ -5,7 +5,6 @@ import com.epam.eugene.exception.BasicArrayException;
 import com.epam.eugene.service.sort.SortArray;
 import com.epam.eugene.service.sort.impl.assortment.BubleSort;
 import com.epam.eugene.service.sort.impl.assortment.InsertionSort;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,7 +17,7 @@ public class SortArrayImpl implements SortArray {
         try {
             BubleSort.sortArray(basicArray);
         } catch (BasicArrayException e) {
-            logger.log(Level.ERROR, "bubleSort() " + e);
+            logger.error( "bubleSort() " + e);
         }
     }
 
@@ -27,7 +26,7 @@ public class SortArrayImpl implements SortArray {
         try {
             InsertionSort.sortArray(basicArray);
         } catch (BasicArrayException e) {
-            logger.log(Level.ERROR, "insertionSort() " + e);
+            logger.error( "insertionSort() " + e);
         }
     }
 }

@@ -2,21 +2,31 @@ package com.epam.eugene._main;
 
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;
-import com.epam.eugene.creator.ArrayCreator;
+import com.epam.eugene.reader.BasicArrayReader;
+import com.epam.eugene.service.calculate.impl.CalculateArrayImpl;
+import com.epam.eugene.service.change.impl.ChangeElementsImpl;
 import com.epam.eugene.service.sort.impl.SortArrayImpl;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Main {
 
-    private static final Logger logger = LogManager.getLogger();
-
     public static void main(final String... args) throws BasicArrayException {
-        BasicArray basicArray = new BasicArray(20);
-        ArrayCreator.fillRandomized(basicArray, 1, 10);
+        BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
         System.out.println(basicArray.toString());
-        SortArrayImpl helperSortArray = new SortArrayImpl();
-        helperSortArray.bubleSort(basicArray);
+        CalculateArrayImpl calculateArray = new CalculateArrayImpl();
+        System.out.println("Average: " + calculateArray.calculateAverageElement(basicArray));
+        System.out.println("Negative elements: " + calculateArray.calculateCountNegativeElements(basicArray));
+        System.out.println("Sum elements: " + calculateArray.calculateSumElements(basicArray));
+        System.out.println("Max element: " + calculateArray.findMaxElement(basicArray));
+        System.out.println("Positive elements: " + calculateArray.calculateCountPositiveElements(basicArray));
+        System.out.println("Min element: " + calculateArray.findMinElement(basicArray));
+        SortArrayImpl sortArray = new SortArrayImpl();
+        sortArray.bubleSort(basicArray);
         System.out.println(basicArray.toString());
+        ChangeElementsImpl changeElements = new ChangeElementsImpl();
+        changeElements.changeEverySecondElementsToFirstElement(basicArray);
+        System.out.println(basicArray.toString());
+        changeElements.changePositiveElementsToZeroValue(basicArray);
+        System.out.println(basicArray.toString());
+
     }
 }

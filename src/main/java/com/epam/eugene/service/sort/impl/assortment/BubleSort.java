@@ -2,7 +2,6 @@ package com.epam.eugene.service.sort.impl.assortment;
 
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,7 +30,7 @@ public class BubleSort {
             basicArray.setElement(indexFirstElement, basicArray.getElement(indexSecondElementl));
             basicArray.setElement(indexSecondElementl, temp);
         } catch (BasicArrayException e) {
-            logger.log(Level.ERROR, "swapElementArray() " + e);
+            logger.error("swapElementArray() " + e);
         }
 
     }

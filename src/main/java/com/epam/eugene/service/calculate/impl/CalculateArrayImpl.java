@@ -36,7 +36,7 @@ public class CalculateArrayImpl implements CalculateArray {
         int[] array = basicArray.getArray();
         int result = array[0];
         for (int i = 1; i < array.length; ++i) {
-            if (result < array[i]) {
+            if (result > array[i]) {
                 result = array[i];
             }
         }

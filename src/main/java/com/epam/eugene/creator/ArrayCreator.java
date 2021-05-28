@@ -2,7 +2,6 @@ package com.epam.eugene.creator;
 
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,7 +19,7 @@ public class ArrayCreator {
             try {
                 basicArray.setElement(i, value);
             } catch (BasicArrayException e) {
-                logger.log(Level.ERROR, "fillRandomized() " + e);
+                logger.error( "fillRandomized() " + e);
             }
         }
     }

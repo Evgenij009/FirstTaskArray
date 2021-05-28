@@ -13,7 +13,7 @@ public class ChangeElementsImpl implements ChangeElements {
     @Override
     public void changePositiveElementsToZeroValue(BasicArray basicArray) throws BasicArrayException {
         if (basicArray.isEmpty() || basicArray == null) {
-            logger.info("changePositiveElementsToZeroValue() Array is empty!");
+            logger.error("changePositiveElementsToZeroValue() Array is empty!");
             throw new BasicArrayException("changePositiveElementsToZeroValue() Array is empty!");
         }
         int[] array = basicArray.getArray();
@@ -28,7 +28,7 @@ public class ChangeElementsImpl implements ChangeElements {
     @Override
     public void changeEverySecondElementsToFirstElement(BasicArray basicArray) throws BasicArrayException {
         if (basicArray.isEmpty() || basicArray == null) {
-            logger.info("changeEverySecondElementsToFirstElement() Array is empty!");
+            logger.error("changeEverySecondElementsToFirstElement() Array is empty!");
             throw new BasicArrayException("changeEverySecondElementsToFirstElement() Array is empty!");
         }
         int[] array = basicArray.getArray();

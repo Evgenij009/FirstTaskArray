@@ -1,16 +1,15 @@
 package com.epam.eugene.entity;
 
 import com.epam.eugene.exception.BasicArrayException;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class BasicArray {
 
     private static final Logger logger = LogManager.getLogger();
+    private static final String MESSAGE_ERROR = "getElement() Index is illegal";
     private int[] array;
 
     public BasicArray(int[] array) {
@@ -19,10 +18,11 @@ public class BasicArray {
 
     public BasicArray(int sizeArray) throws BasicArrayException {
         if (sizeArray < 1) {
-            throw new BasicArrayException("size array " + sizeArray + "less than zero");
+            logger.error("constructore BasicArray sizeArray less than 1");
+            throw new BasicArrayException("size array: " + sizeArray + " less than zero");
         }
         this.array = new int[sizeArray];
-        logger.log(Level.INFO, "Array created with size " + sizeArray);
+        logger.error("Array created with size " + sizeArray);
     }
 
     public int getSize() {
@@ -31,16 +31,16 @@ public class BasicArray {
 
     public int getElement(int index) throws BasicArrayException {
         if (index >= array.length || index < 0) {
-            logger.error("getElement() Index is illegal");
-           throw new BasicArrayException("getElement() Index is illegal");
+            logger.error(MESSAGE_ERROR);
+           throw new BasicArrayException(MESSAGE_ERROR);
         }
         return this.array[index];
     }
 
     public void setElement(int index, int element) throws BasicArrayException {
         if (index >= array.length || index < 0) {
-            logger.error("getElement() Index is illegal");
-            throw new BasicArrayException("getElement() Index is illegal");
+            logger.error(MESSAGE_ERROR);
+            throw new BasicArrayException(MESSAGE_ERROR);
         }
         this.array[index] = element;
     }
@@ -60,6 +60,7 @@ public class BasicArray {
 
     public int[] getArray() throws BasicArrayException {
         if (array.length < 1) {
+            logger.error("getArray() Array is empty");
             throw new BasicArrayException("array is empty");
         }
         return this.array.clone();
