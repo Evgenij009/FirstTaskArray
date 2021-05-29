@@ -19,22 +19,25 @@ public class BasicArrayReader {
     }
 
     public static BasicArray readBasicArrayFromFile(String path) throws BasicArrayException {
-
+        BasicArray basicArray = null;
         try (Scanner scanner = new Scanner(new File(path))) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 if (BasicArrayValidator.isValidateDigitLine(line)) {
                     int[] digits = ParserArrayDigit.parseDigits(line);
-                    BasicArray basicArray = new BasicArray(digits);
-                    logger.info("File is valid. Data read.");
-                    return basicArray;
+                    basicArray = new BasicArray(digits);
+                    break;
                 }
             }
-            logger.error("File data is incorrect.");
-            throw new BasicArrayException("File data is incorrect");
         } catch (FileNotFoundException e) {
             logger.fatal("fatal error: file not found: " + path, e);
             throw new BasicArrayException("fatal error: file not found: " + path, e);
         }
+        if (basicArray == null) {
+            logger.error("File data is incorrect.");
+            throw new BasicArrayException("File data is incorrect");
+        }
+        logger.info("File is valid. Data read.");
+        return basicArray;
     }
 }
