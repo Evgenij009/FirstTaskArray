@@ -33,8 +33,8 @@ public class BasicArrayReader {
             logger.error("File data is incorrect.");
             throw new BasicArrayException("File data is incorrect");
         } catch (FileNotFoundException e) {
-            logger.error("File not found");
+            logger.fatal("fatal error: file not found: " + path, e);
+            throw new BasicArrayException("fatal error: file not found: " + path, e);
         }
-        return null;
     }
 }
