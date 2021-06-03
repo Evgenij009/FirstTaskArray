@@ -52,7 +52,7 @@ public class CalculateArrayImpl implements CalculateArray {
         }
         double average = (double) (calculateSumElements(basicArray) / basicArray.getSize());
         logger.info("Calculate average of array elements: " + average);
-        return 0;
+        return average;
     }
 
     @Override

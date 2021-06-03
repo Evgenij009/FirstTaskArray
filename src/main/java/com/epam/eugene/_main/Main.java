@@ -10,7 +10,8 @@ import com.epam.eugene.service.sort.impl.SortArrayImpl;
 public class Main {
 
     public static void main(final String... args) throws BasicArrayException {
-        BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
+        //BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
+        BasicArray basicArray = new BasicArray(new int[]{2, 33, -24, -23, -12, -2, 1234, -202, 1, 1, -12, -232, 231, 43232, -11111, 0, -14211});
         System.out.println(basicArray.toString());
         CalculateArrayImpl calculateArray = new CalculateArrayImpl();
         System.out.println("Average: " + calculateArray.calculateAverageElement(basicArray));

@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BasicArrayValidator {
-    private static final String REGEX_NUMBER = "^[-?[\\d]+\\s]+$";
+    private static final String REGEX_NUMBER = "^[-?[\\d]+[\\s]+ ]+$";
 
     private BasicArrayValidator() {
     }

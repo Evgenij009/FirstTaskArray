@@ -9,7 +9,7 @@ public class ArrayCreator {
 
     private static final Logger logger = LogManager.getLogger();
 
-    private ArrayCreator() {
+    public ArrayCreator() {
     }
 
     public static void fillRandomized(BasicArray basicArray, int minValue, int maxValue) {
@@ -23,8 +23,5 @@ public class ArrayCreator {
             }
         }
     }
-// public int[][] createArray(int n, int m, int minValue, int maxValue) {/*code*/
-    // public void createFromFile(Matrix matrix, File f) { /* code */ }
-    // public void createFromStream(Matrix matrix, Stream stream) { /* code */ }
 
 }
