@@ -32,7 +32,6 @@ public class BubleSort {
         } catch (BasicArrayException e) {
             logger.error("swapElementArray() " + e);
         }
-
     }
 
 

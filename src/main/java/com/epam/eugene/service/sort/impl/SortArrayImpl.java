@@ -5,6 +5,7 @@ import com.epam.eugene.exception.BasicArrayException;
 import com.epam.eugene.service.sort.SortArray;
 import com.epam.eugene.service.sort.impl.assortment.BubleSort;
 import com.epam.eugene.service.sort.impl.assortment.InsertionSort;
+import com.epam.eugene.service.sort.impl.assortment.QuickSort;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,6 +28,15 @@ public class SortArrayImpl implements SortArray {
             InsertionSort.sortArray(basicArray);
         } catch (BasicArrayException e) {
             logger.error( "insertionSort() " + e);
+        }
+    }
+
+    @Override
+    public void quickSort(BasicArray basicArray) {
+        try {
+            QuickSort.sortArray(basicArray);
+        } catch (BasicArrayException e) {
+            logger.error( "quickSort() " + e);
         }
     }
     //todo add sorting methods
