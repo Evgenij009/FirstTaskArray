@@ -12,7 +12,7 @@ public class CalculateArrayImpl implements CalculateArray {
 
     @Override
     public int findMaxElement(BasicArray basicArray) throws BasicArrayException {
-        if (basicArray.isEmpty() || basicArray == null) {
+        if (basicArray == null || basicArray.isEmpty()) {
             logger.error("findMaxlement() Array is empty!");
             throw new BasicArrayException("findMaxElement() Array is empty!");
         }
@@ -29,7 +29,7 @@ public class CalculateArrayImpl implements CalculateArray {
 
     @Override
     public int findMinElement(BasicArray basicArray) throws BasicArrayException {
-        if (basicArray.isEmpty() || basicArray == null) {
+        if (basicArray == null || basicArray.isEmpty()) {
             logger.error("findMinElement() Array is empty!");
             throw new BasicArrayException("findMinElement() Array is empty!");
         }
@@ -46,7 +46,7 @@ public class CalculateArrayImpl implements CalculateArray {
 
     @Override
     public double calculateAverageElement(BasicArray basicArray) throws BasicArrayException {
-        if (basicArray.isEmpty() || basicArray == null) {
+        if (basicArray == null || basicArray.isEmpty()) {
             logger.error("calculateAverageElement() Array is empty!");
             throw new BasicArrayException("Array is empty");
         }
@@ -57,6 +57,10 @@ public class CalculateArrayImpl implements CalculateArray {
 
     @Override
     public long calculateSumElements(BasicArray basicArray) throws BasicArrayException {
+        if (basicArray == null || basicArray.isEmpty()) {
+            logger.error("calculateSumElements() Array is empty or NULL!");
+            throw new BasicArrayException("Array is empty or NULL");
+        }
         long sum = 0L;
         int[] array = basicArray.getArray();
         for (int element : array) {
@@ -68,6 +72,10 @@ public class CalculateArrayImpl implements CalculateArray {
 
     @Override
     public int calculateCountPositiveElements(BasicArray basicArray) throws BasicArrayException {
+        if (basicArray == null || basicArray.isEmpty()) {
+            logger.error("calculateCountPositiveElements() Array is empty or NULL!");
+            throw new BasicArrayException("Array is empty or NULL");
+        }
         int count = 0;
         int[] array = basicArray.getArray();
         for (int element : array) {
@@ -81,6 +89,10 @@ public class CalculateArrayImpl implements CalculateArray {
 
     @Override
     public int calculateCountNegativeElements(BasicArray basicArray) throws BasicArrayException {
+        if (basicArray == null || basicArray.isEmpty()) {
+            logger.error("calculateCountNegativeElements() Array is empty or NULL!");
+            throw new BasicArrayException("Array is empty or NULL");
+        }
         int count = 0;
         int[] array = basicArray.getArray();
         for (int element : array) {

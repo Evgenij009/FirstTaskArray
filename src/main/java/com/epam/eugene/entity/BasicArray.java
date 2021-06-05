@@ -12,7 +12,14 @@ public class BasicArray {
     private static final String MESSAGE_ERROR = "getElement() Index is illegal";
     private int[] array;
 
-    public BasicArray(int[] array) {
+    public BasicArray() {
+        array = new int[0];
+    }
+
+    public BasicArray(int[] array) throws BasicArrayException {
+        if (array == null) {
+            throw new BasicArrayException("Array init is NULL.");
+        }
         this.array  = array;
     }
 
@@ -25,7 +32,10 @@ public class BasicArray {
         logger.error("Array created with size " + sizeArray);
     }
 
-    public int getSize() {
+    public int getSize() throws BasicArrayException {
+        if (this == null) {
+            throw new BasicArrayException("Array is null");
+        }
         return array.length;
     }
 
@@ -45,7 +55,10 @@ public class BasicArray {
         this.array[index] = element;
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty() throws BasicArrayException {
+        if (this == null) {
+            throw new BasicArrayException("Array is null");
+        }
         return array.length == 0;
     }
 

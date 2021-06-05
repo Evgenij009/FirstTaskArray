@@ -14,7 +14,11 @@ public class SortArrayImpl implements SortArray {
     private static final Logger logger = LogManager.getLogger();
 
     @Override
-    public void bubleSort(BasicArray basicArray) {
+    public void bubleSort(BasicArray basicArray) throws BasicArrayException {
+        if (basicArray == null || basicArray.isEmpty()) {
+            logger.error("bubleSort() Array is empty or NULL!");
+            throw new BasicArrayException("Array is empty");
+        }
         try {
             BubleSort.sortArray(basicArray);
         } catch (BasicArrayException e) {
@@ -23,7 +27,11 @@ public class SortArrayImpl implements SortArray {
     }
 
     @Override
-    public void insertionSort(BasicArray basicArray) {
+    public void insertionSort(BasicArray basicArray) throws BasicArrayException {
+        if (basicArray == null || basicArray.isEmpty()) {
+            logger.error("insertionSort() Array is empty or NULL!");
+            throw new BasicArrayException("Array is empty");
+        }
         try {
             InsertionSort.sortArray(basicArray);
         } catch (BasicArrayException e) {
@@ -32,7 +40,11 @@ public class SortArrayImpl implements SortArray {
     }
 
     @Override
-    public void quickSort(BasicArray basicArray) {
+    public void quickSort(BasicArray basicArray) throws BasicArrayException {
+        if (basicArray == null || basicArray.isEmpty()) {
+            logger.error("quickSort() Array is empty or NULL!");
+            throw new BasicArrayException("Array is empty");
+        }
         try {
             QuickSort.sortArray(basicArray);
         } catch (BasicArrayException e) {
