@@ -1,4 +1,4 @@
-package com.epam.eugene;
+package com.epam.eugene.service;
 
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.service.calculate.impl.CalculateArrayImpl;
