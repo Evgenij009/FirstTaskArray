@@ -1,5 +1,6 @@
 package com.epam.eugene._main;
 
+import com.epam.eugene.creator.ArrayCreator;
 import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;
 import com.epam.eugene.reader.BasicArrayReader;
@@ -10,7 +11,8 @@ import com.epam.eugene.service.sort.impl.SortArrayImpl;
 public class Main {
 
     public static void main(final String... args) throws BasicArrayException {
-        BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
+//        BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
+        BasicArray basicArray = new BasicArray(ArrayCreator.generateSequenceNumbers(20));
         System.out.println(basicArray.toString());
         CalculateArrayImpl calculateArray = new CalculateArrayImpl();
         System.out.println("Average: " + calculateArray.calculateAverageElement(basicArray));

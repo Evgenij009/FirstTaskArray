@@ -1,28 +1,26 @@
 package com.epam.eugene.creator;
 
-import com.epam.eugene.entity.BasicArray;
 import com.epam.eugene.exception.BasicArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Random;
+
 public class ArrayCreator {
 
     private static final Logger logger = LogManager.getLogger();
+    private static final String MESSAGE_ERROR = "generateSequenceNumbers() Length sequence = %d. Value should be better than 0!";
 
     private ArrayCreator() {
     }
 
-    public static void fillRandomized(BasicArray basicArray, int minValue, int maxValue)  {
-        int sizeArray = 0;
-            sizeArray = basicArray.getSize();
-        for (int i = 0; i < sizeArray; ++i) {
-            int value = (int)((Math.random() * (maxValue - minValue)) + minValue);
-            try {
-                basicArray.setElement(i, value);
-            } catch (BasicArrayException e) {
-                logger.error( "fillRandomized() " + e);
-            }
+    public static int[] generateSequenceNumbers(int lengthSequence) throws BasicArrayException {
+        if (lengthSequence < 1) {
+            logger.error(String.format(MESSAGE_ERROR, lengthSequence));
+            throw new BasicArrayException(String.format(MESSAGE_ERROR, lengthSequence));
         }
+        int[] array = new Random().ints(lengthSequence).toArray();
+        return array;
     }
 
 }

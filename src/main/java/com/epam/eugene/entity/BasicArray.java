@@ -7,9 +7,8 @@ import org.apache.logging.log4j.Logger;
 import java.util.Arrays;
 
 public class BasicArray {
-
     private static final Logger logger = LogManager.getLogger();
-    private static final String MESSAGE_ERROR = "getElement() Index is illegal";
+    private static final String MESSAGE_ERROR = "Index is illegal";
     private int[] array;
 
     public BasicArray() {
