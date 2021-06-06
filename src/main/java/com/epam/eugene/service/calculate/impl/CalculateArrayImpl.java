@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 public class CalculateArrayImpl implements CalculateArray {
 
     private static final Logger logger = LogManager.getLogger();
+    private static final String MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL = "Array is empty or NULL";
 
     @Override
     public int findMaxElement(BasicArray basicArray) throws BasicArrayException {
@@ -48,7 +49,7 @@ public class CalculateArrayImpl implements CalculateArray {
     public double calculateAverageElement(BasicArray basicArray) throws BasicArrayException {
         if (basicArray == null || basicArray.isEmpty()) {
             logger.error("calculateAverageElement() Array is empty!");
-            throw new BasicArrayException("Array is empty");
+            throw new BasicArrayException(MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL);
         }
         double average = (double) (calculateSumElements(basicArray) / basicArray.getSize());
         logger.info("Calculate average of array elements: " + average);
@@ -59,7 +60,7 @@ public class CalculateArrayImpl implements CalculateArray {
     public long calculateSumElements(BasicArray basicArray) throws BasicArrayException {
         if (basicArray == null || basicArray.isEmpty()) {
             logger.error("calculateSumElements() Array is empty or NULL!");
-            throw new BasicArrayException("Array is empty or NULL");
+            throw new BasicArrayException(MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL);
         }
         long sum = 0L;
         int[] array = basicArray.getArray();
@@ -74,7 +75,7 @@ public class CalculateArrayImpl implements CalculateArray {
     public int calculateCountPositiveElements(BasicArray basicArray) throws BasicArrayException {
         if (basicArray == null || basicArray.isEmpty()) {
             logger.error("calculateCountPositiveElements() Array is empty or NULL!");
-            throw new BasicArrayException("Array is empty or NULL");
+            throw new BasicArrayException(MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL);
         }
         int count = 0;
         int[] array = basicArray.getArray();
@@ -91,7 +92,7 @@ public class CalculateArrayImpl implements CalculateArray {
     public int calculateCountNegativeElements(BasicArray basicArray) throws BasicArrayException {
         if (basicArray == null || basicArray.isEmpty()) {
             logger.error("calculateCountNegativeElements() Array is empty or NULL!");
-            throw new BasicArrayException("Array is empty or NULL");
+            throw new BasicArrayException(MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL);
         }
         int count = 0;
         int[] array = basicArray.getArray();

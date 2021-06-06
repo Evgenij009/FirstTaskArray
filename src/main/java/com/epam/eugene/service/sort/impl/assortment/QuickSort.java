@@ -9,19 +9,22 @@ public class QuickSort {
 
     private static final Logger logger = LogManager.getLogger();
 
+    private QuickSort() {
+    }
+
     public static void sortArray(BasicArray basicArray) throws BasicArrayException {
         quickSortImpl(basicArray, 0, basicArray.getSize() - 1);
     }
 
     private static void quickSortImpl(BasicArray basicArray, int leftEl, int rightEl) throws BasicArrayException {
         if (leftEl < rightEl) {
-            int q = Partition(basicArray, leftEl, rightEl);
+            int q = calcPartition(basicArray, leftEl, rightEl);
             quickSortImpl(basicArray, leftEl, q - 1);
             quickSortImpl(basicArray, q + 1, rightEl);
         }
     }
 
-    private static int Partition(BasicArray basicArray, int leftEl, int rightEl) throws BasicArrayException {
+    private static int calcPartition(BasicArray basicArray, int leftEl, int rightEl) throws BasicArrayException {
         int x = basicArray.getElement(rightEl);
         int less = leftEl;
         for (int i = leftEl; i < rightEl; ++i) {

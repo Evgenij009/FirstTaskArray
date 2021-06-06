@@ -9,16 +9,12 @@ public class ArrayCreator {
 
     private static final Logger logger = LogManager.getLogger();
 
-    public ArrayCreator() {
+    private ArrayCreator() {
     }
 
     public static void fillRandomized(BasicArray basicArray, int minValue, int maxValue)  {
         int sizeArray = 0;
-        try {
             sizeArray = basicArray.getSize();
-        } catch (BasicArrayException e) {
-            logger.error(" Array is null");
-        }
         for (int i = 0; i < sizeArray; ++i) {
             int value = (int)((Math.random() * (maxValue - minValue)) + minValue);
             try {

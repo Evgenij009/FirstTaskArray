@@ -10,14 +10,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class SortArrayImpl implements SortArray {
-
+    private static final String MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL = "Array is empty or NULL";
     private static final Logger logger = LogManager.getLogger();
 
     @Override
     public void bubleSort(BasicArray basicArray) throws BasicArrayException {
         if (basicArray == null || basicArray.isEmpty()) {
             logger.error("bubleSort() Array is empty or NULL!");
-            throw new BasicArrayException("Array is empty");
+            throw new BasicArrayException(MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL);
         }
         try {
             BubleSort.sortArray(basicArray);
@@ -30,7 +30,7 @@ public class SortArrayImpl implements SortArray {
     public void insertionSort(BasicArray basicArray) throws BasicArrayException {
         if (basicArray == null || basicArray.isEmpty()) {
             logger.error("insertionSort() Array is empty or NULL!");
-            throw new BasicArrayException("Array is empty");
+            throw new BasicArrayException(MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL);
         }
         try {
             InsertionSort.sortArray(basicArray);
@@ -43,7 +43,7 @@ public class SortArrayImpl implements SortArray {
     public void quickSort(BasicArray basicArray) throws BasicArrayException {
         if (basicArray == null || basicArray.isEmpty()) {
             logger.error("quickSort() Array is empty or NULL!");
-            throw new BasicArrayException("Array is empty");
+            throw new BasicArrayException(MESSAGE_ERROR_ARRAY_IS_EMPTY_OR_NULL);
         }
         try {
             QuickSort.sortArray(basicArray);
@@ -51,5 +51,4 @@ public class SortArrayImpl implements SortArray {
             logger.error( "quickSort() " + e);
         }
     }
-    //todo add sorting methods
 }

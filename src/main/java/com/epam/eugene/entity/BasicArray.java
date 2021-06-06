@@ -23,19 +23,7 @@ public class BasicArray {
         this.array  = array;
     }
 
-    public BasicArray(int sizeArray) throws BasicArrayException {
-        if (sizeArray < 1) {
-            logger.error("constructore BasicArray sizeArray less than 1");
-            throw new BasicArrayException("size array: " + sizeArray + " less than zero");
-        }
-        this.array = new int[sizeArray];
-        logger.error("Array created with size " + sizeArray);
-    }
-
-    public int getSize() throws BasicArrayException {
-        if (this == null) {
-            throw new BasicArrayException("Array is null");
-        }
+    public int getSize() {
         return array.length;
     }
 
@@ -55,10 +43,7 @@ public class BasicArray {
         this.array[index] = element;
     }
 
-    public boolean isEmpty() throws BasicArrayException {
-        if (this == null) {
-            throw new BasicArrayException("Array is null");
-        }
+    public boolean isEmpty() {
         return array.length == 0;
     }
 
