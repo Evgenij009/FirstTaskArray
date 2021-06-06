@@ -19,6 +19,10 @@ public class BasicArrayReader {
     }
 
     public static BasicArray readBasicArrayFromFile(String path) throws BasicArrayException {
+        if (path == null || path.isEmpty()) {
+            logger.fatal("readBasicArrayFromFile() Path to file is empty or NULL!");
+            throw new BasicArrayException("Path to file is empty or NULL");
+        }
         BasicArray basicArray = null;
         try (Scanner scanner = new Scanner(new File(path))) {
             while (scanner.hasNextLine()) {
@@ -30,14 +34,14 @@ public class BasicArrayReader {
                 }
             }
         } catch (FileNotFoundException e) {
-            logger.fatal("fatal error: file not found: " + path, e);
+            logger.fatal("fatal error: file not found: " + path);
             throw new BasicArrayException("fatal error: file not found: " + path, e);
         }
         if (basicArray == null) {
             logger.error("File data is incorrect.");
             throw new BasicArrayException("File data is incorrect");
         }
-        logger.info("File is valid. Data read.");
+        logger.info("File is valid. Data was read.");
         return basicArray;
     }
 }

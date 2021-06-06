@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(final String... args) throws BasicArrayException {
         BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
-//        System.out.println(basicArray.toString());
+        System.out.println(basicArray.toString());
 //        CalculateArrayImpl calculateArray = new CalculateArrayImpl();
 //        System.out.println("Average: " + calculateArray.calculateAverageElement(basicArray));
 //        System.out.println("Negative elements: " + calculateArray.calculateCountNegativeElements(basicArray));
