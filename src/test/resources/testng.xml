@@ -17,6 +17,7 @@
             <class name="com.epam.eugene.parser.TestParserArrayDigit"/>
             <class name="com.epam.eugene.validation.TestBasicArrayValidator"/>
             <class name="com.epam.eugene.entity.TestBasicArray"/>
+            <class name="com.epam.eugene.creator.ArrayCreatorTest"/>
         </classes>
     </test>
 
