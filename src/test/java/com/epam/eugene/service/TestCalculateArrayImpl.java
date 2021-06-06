@@ -14,7 +14,7 @@ public class TestCalculateArrayImpl {
     private static BasicArray BASIC_ARRAY_TEST;
     private static final int ACTUAL_MAX_ELEMENT = 43232;
     private static final int ACTUAL_MIN_ELEMENT = -14211;
-    private static final int ACTUAL_AVERAGE_ELEMENT = 1112;
+    private static final double ACTUAL_AVERAGE_ELEMENT = 1112.0588235294117;
     private static final int ACTUAL_SUM_ELEMENTS = 18905;
     private static final int ACTUAL_COUNT_NEGATIVE_ELEMENTS = 9;
     private static final int ACTUAL_COUNT_POSITIVE_ELEMENTS = 7;

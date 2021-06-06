@@ -11,8 +11,8 @@ import com.epam.eugene.service.sort.impl.SortArrayImpl;
 public class Main {
 
     public static void main(final String... args) throws BasicArrayException {
-//        BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
-        BasicArray basicArray = new BasicArray(ArrayCreator.generateSequenceNumbers(20));
+        BasicArray basicArray = BasicArrayReader.readBasicArrayFromFile("file/array1.txt");
+//        BasicArray basicArray = new BasicArray(ArrayCreator.generateSequenceNumbers(20));
         System.out.println(basicArray.toString());
         CalculateArrayImpl calculateArray = new CalculateArrayImpl();
         System.out.println("Average: " + calculateArray.calculateAverageElement(basicArray));
